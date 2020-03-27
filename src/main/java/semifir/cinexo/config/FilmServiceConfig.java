@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Profile;
 
 import semifir.cinexo.domain.Film;
 import semifir.cinexo.repositories.impl.FilmJpaRepo;
-import semifir.cinexo.repositories.impl.FilmOMDBRepository;
 import semifir.cinexo.services.FilmService;
 import semifir.cinexo.services.impl.FilmApiService;
 
@@ -19,7 +18,7 @@ public class FilmServiceConfig {
 	
 	@Bean("apiMovieService")
 	@Profile("prod")
-	public FilmService apiMovieService(FilmOMDBRepository repo) {
+	public FilmService apiMovieService(FilmJpaRepo repo) {
 		FilmService service = new FilmApiService(repo);
 		return service;
 	}

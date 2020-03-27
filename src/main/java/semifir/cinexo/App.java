@@ -11,9 +11,6 @@ public class App {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext contexte = SpringApplication.run(App.class, args);
 		
-		var filmService = contexte.getBean(FilmService.class);
-		
-		System.out.println(filmService);
 
 	}
 }
